@@ -156,6 +156,28 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
+  (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+  (defadvice web-mode-highlight-part (around tweak-jsx activate)
+    (if (equal web-mode-content-type "jsx")
+        (let ((web-mode-enable-part-face nil))
+          ad-do-it)
+      ad-do-it))
+
+
+  (require 'flycheck)
+  (eval-after-load 'flycheck
+    '(progn
+       (flycheck-add-mode 'javascript-eslint 'web-mode)))
+
+  (add-hook 'web-mode-hook
+            (lambda ()
+              (when (equal web-mode-content-type "jsx")
+                ;; enable flycheck
+                (flycheck-select-checker 'javascript-eslint)
+                (flycheck-mode))))
+  (add-hook 'jsx-mode-hook (lambda () (tern-mode t)))
+
+  (add-hook 'python-mode-hook (lambda () (electric-indent-mode -1)))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
