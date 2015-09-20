@@ -6,6 +6,9 @@ cd emacs-24.5
 make
 sudo make install
 
+git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+
 cd ~
 ln -s dotfiles/.spacemacs
 ln -s dotfiles/.zshrc
