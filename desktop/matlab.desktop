@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=MATLAB
+Comment=Start MATLAB - The Language of Technical Computing
+Exec=/usr/local/MATLAB/MATLAB_Production_Server/R2015a/bin/matlab -desktop
+Icon=/home/cglwn/Pictures/icons/matlab.png
+Type=Application
+Categories=Development;
