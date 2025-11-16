@@ -142,8 +142,8 @@ before layers configuration."
    ;; If non nil advises quit functions to keep server open when quitting.
    dotspacemacs-persistent-server t
    ;; List of search tool executable names. Spacemacs uses the first installed
-   ;; tool of the list. Supported tools are `ag', `pt', `ack' and `grep'.
-   dotspacemacs-search-tools '("ag" "pt" "ack" "grep")
+   ;; tool of the list. Supported tools are `rg`, `ag', `pt', `ack' and `grep'.
+   dotspacemacs-search-tools '("rg" "ag" "pt" "ack" "grep")
    ;; The default package repository used if no explicit repository has been
    ;; specified with an installed package.
    ;; Not used for now.
